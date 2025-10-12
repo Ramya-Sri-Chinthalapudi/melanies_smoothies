@@ -38,7 +38,7 @@ if ingredients_list:
         st.subheader(f'{fruit_chosen} Nutrition Information')
 
         try:
-            fruityvice_response = requests.get(f"https://fruityvice.com/api/fruit/{fruit_chosen}")
+            fruityvice_response = requests.get(f"https://fruityvice.com/api/fruit/{search_on}")
             if fruityvice_response.status_code == 200:
                 st.dataframe(fruityvice_response.json(), use_container_width=True)
             else:
